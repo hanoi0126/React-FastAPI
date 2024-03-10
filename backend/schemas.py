@@ -17,12 +17,12 @@ class User(UserBase):
 
 
 class SalesBase(BaseModel):
-    yaer: int
+    year: int
     department: str
     sales: float
 
 
-class SalsCreate(SalesBase):
+class SalesCreate(SalesBase):
     pass
 
 
