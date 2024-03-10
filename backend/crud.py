@@ -38,6 +38,10 @@ def get_sales_by_year(db: Session, year: int):
     return db.query(models.Sales).filter(models.Sales.year == year).all()
 
 
+def get_sales_by_year_by_department(db: Session, year: int, department: str):
+    return db.query(models.Sales).filter(models.Sales.year == year, models.Sales.department == department).all()
+
+
 def create_sales(db: Session, sales: schemas.SalesCreate):
     db_sales = models.Sales(year=sales.year, department=sales.department, sales=sales.sales)
     db.add(db_sales)
